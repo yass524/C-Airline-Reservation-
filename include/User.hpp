@@ -24,7 +24,7 @@ public:
         void setName(const std::string& name);
         void setEmail(const std::string& email);
         void setPassword(const std::string& password);
-        void setPhoneNumber(const std::string& phoneNumber);
+        void setPhoneNumber(const int& phoneNumber);
         //void setRole(const std::string& role);
 
         bool checkPassword(const std::string& password) const;

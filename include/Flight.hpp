@@ -1,61 +1,70 @@
 #pragma once
 
-#include "Aircraft.hpp"
 #include <string>
 #include <vector>
+#include <map>
 
-
-class Aircraft {
+class Flight {
 private:
+    int flightId;
+    std::string flightNumber;
+    std::string origin;
+    std::string destination;
+    std::string departureTime;
+    std::string arrivalTime;
     int aircraftId;
-    std::string model;
-    std::string manufacturer;
-    int capacity;
-    int economySeats;
-    int businessSeats;
-    int firstClassSeats;
-    double maxRangeKm;
     std::string status;
-    std::vector<int> maintenanceIds;
+    double price;
+
+    std::vector<int> crewIds;
+    std::map<std::string, bool> seatAvailability;
 
 public:
-    Aircraft aircraft();
+    Flight();
 
-    Aircraft(int aircraftId,
-             const std::string& model,
-             const std::string& manufacturer,
-             int capacity,
-             int economySeats,
-             int businessSeats,
-             int firstClassSeats,
-             double maxRangeKm);
+    Flight(int flightId,
+           const std::string& flightNumber,
+           const std::string& origin,
+           const std::string& destination,
+           const std::string& departureTime,
+           const std::string& arrivalTime,
+           int aircraftId,
+           double price);
 
+    int getFlightId() const;
+    std::string getFlightNumber() const;
+    std::string getOrigin() const;
+    std::string getDestination() const;
+    std::string getDepartureTime() const;
+    std::string getArrivalTime() const;
     int getAircraftId() const;
-    std::string getModel() const;
-    std::string getManufacturer() const;
-    int getCapacity() const;
-    int getEconomySeats() const;
-    int getBusinessSeats() const;
-    int getFirstClassSeats() const;
-    double getMaxRangeKm() const;
     std::string getStatus() const;
-    std::vector<int> getMaintenanceIds() const;
+    double getPrice() const;
+    std::vector<int> getCrewIds() const;
 
-    void setModel(const std::string& model);
-    void setManufacturer(const std::string& manufacturer);
-    void setCapacity(int capacity);
-    void setEconomySeats(int seats);
-    void setBusinessSeats(int seats);
-    void setFirstClassSeats(int seats);
-    void setMaxRangeKm(double range);
+    void setFlightNumber(const std::string& flightNumber);
+    void setOrigin(const std::string& origin);
+    void setDestination(const std::string& destination);
+    void setDepartureTime(const std::string& departureTime);
+    void setArrivalTime(const std::string& arrivalTime);
+    void setAircraftId(int aircraftId);
     void setStatus(const std::string& status);
+    void setPrice(double price);
 
-    bool isAvailable() const;
-    void markAvailable();
-    void markInFlight();
-    void markUnderMaintenance();
+    void assignCrewMember(int crewId);
+    void removeCrewMember(int crewId);
 
-    void addMaintenanceId(int maintenanceId);
+    void initializeSeatMap(int economySeats, int businessSeats, int firstClassSeats);
+    bool isSeatAvailable(const std::string& seatNumber) const;
+    bool reserveSeat(const std::string& seatNumber);
+    bool releaseSeat(const std::string& seatNumber);
+
+    std::vector<std::string> getAvailableSeats() const;
+    void displaySeatMap() const;
+
+    bool matchesSearch(const std::string& origin,
+                       const std::string& destination,
+                       const std::string& date) const;
 
     void displayInfo() const;
 };
