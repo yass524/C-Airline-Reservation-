@@ -24,10 +24,10 @@ public:
         void setName(const std::string& name);
         void setEmail(const std::string& email);
         void setPassword(const std::string& password);
-        void setPhoneNumber(const int& phoneNumber);
-        //void setRole(const std::string& role);
+        void setPhoneNumber(const std::string& phoneNumber);
+        void setRole(const std::string& role);
 
         bool checkPassword(const std::string& password) const;
         virtual void displayInfo() const;
-        virtual void showMenu() = 0; //3ashan ne3raf ne override
+        virtual void showMenu() = 0; // Abstract 3ashan ne3raf ne override 
 };

@@ -1,0 +1,3 @@
+aircraftId,model,manufacturer,capacity,economySeats,businessSeats,firstClassSeats,maxRangeKm,status,maintenanceIds
+1,747,Hamada,120,90,20,10,10000,Available,
+2,432,Homos,100,80,10,5,12000,Available,

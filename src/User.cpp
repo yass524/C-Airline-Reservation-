@@ -34,12 +34,12 @@ void User::setEmail(const std::string& email) {
 void User::setPassword(const std::string& password) {
     this->password = password;
 }
-void User::setPhoneNumber(const int& phoneNumber) {
+void User::setPhoneNumber(const std::string& phoneNumber) {
     this->phoneNumber = phoneNumber;
 }
-/*void User::setRole(const std::string& role) {
+void User::setRole(const std::string& role) {
     this->role = role;
-}*/
+}
 
 bool User::checkPassword(const std::string& password) const {
     return this->password == password;

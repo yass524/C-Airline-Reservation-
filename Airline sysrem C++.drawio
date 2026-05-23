@@ -1,0 +1,90 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="uWj8HvSksbgqtcQk4nad">
+    <mxGraphModel dx="1245" dy="976" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="User" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="User&#xa;-------------------------&#xa;# userId : int&#xa;# username : string&#xa;# passwordHash : string&#xa;# fullName : string&#xa;# email : string&#xa;# phoneNumber : string&#xa;# role : string&#xa;-------------------------&#xa;+ getUserId() : int&#xa;+ getUsername() : string&#xa;+ getRole() : string&#xa;+ checkPassword(password : string) : bool&#xa;+ showMenu() : void&#xa;+ displayInfo() : void" vertex="1">
+          <mxGeometry height="260" width="280" x="640" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Administrator" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="Administrator&#xa;-------------------------&#xa;+ createUser() : void&#xa;+ updateUser() : void&#xa;+ deleteUser() : void&#xa;+ viewAllUsers() : void&#xa;&#xa;+ addFlight() : void&#xa;+ updateFlight() : void&#xa;+ removeFlight() : void&#xa;+ viewAllFlights() : void&#xa;&#xa;+ addAircraft() : void&#xa;+ updateAircraft() : void&#xa;+ removeAircraft() : void&#xa;+ viewAllAircraft() : void&#xa;&#xa;+ assignCrewToFlight() : void&#xa;+ generateReports() : void" vertex="1">
+          <mxGeometry height="330" width="300" x="610" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="BookingAgent" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="BookingAgent&#xa;-------------------------&#xa;+ searchFlights() : void&#xa;+ createReservation() : void&#xa;+ modifyReservation() : void&#xa;+ cancelReservation() : void&#xa;&#xa;+ processPayment() : void&#xa;+ processRefund() : void&#xa;&#xa;+ airportCheckIn() : void&#xa;+ generateBoardingPass() : void&#xa;&#xa;+ viewPassengerProfile() : void&#xa;+ updatePassengerProfile() : void" vertex="1">
+          <mxGeometry height="300" width="300" x="230" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="Passenger" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="Passenger&#xa;-------------------------&#xa;- passportNumber : string&#xa;- nationality : string&#xa;- loyaltyPoints : int&#xa;- seatPreference : string&#xa;- mealPreference : string&#xa;-------------------------&#xa;+ searchFlights() : void&#xa;+ makeBooking() : void&#xa;+ modifyBooking() : void&#xa;+ cancelBooking() : void&#xa;+ viewBookings() : void&#xa;&#xa;+ selectSeat() : void&#xa;+ makePayment() : void&#xa;&#xa;+ checkInOnline() : void&#xa;+ viewBoardingPass() : void&#xa;&#xa;+ viewProfile() : void&#xa;+ updateProfile() : void&#xa;+ viewLoyaltyPoints() : void&#xa;+ redeemLoyaltyPoints() : void&#xa;+ viewTravelHistory() : void" vertex="1">
+          <mxGeometry height="390" width="320" x="990" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="BookingSystem" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="BookingSystem&#xa;-------------------------&#xa;- users : vector&lt;User&gt;&#xa;- flights : vector&lt;Flight&gt;&#xa;- aircraftList : vector&lt;Aircraft&gt;&#xa;- reservations : vector&lt;Reservation&gt;&#xa;- payments : vector&lt;Payment&gt;&#xa;- maintenanceRecords : vector&lt;Maintenance&gt;&#xa;-------------------------&#xa;+ run() : void&#xa;+ loadData() : void&#xa;+ saveData() : void&#xa;+ addUser(user : User) : void&#xa;+ deleteUser(userId : int) : bool&#xa;+ addFlight(flight : Flight) : void&#xa;+ updateFlight(flightId : int) : bool&#xa;+ removeFlight(flightId : int) : bool&#xa;+ searchFlights(origin : string, destination : string, date : string) : vector&lt;Flight&gt;&#xa;+ addAircraft(aircraft : Aircraft) : void&#xa;+ updateAircraft(aircraftId : int) : bool&#xa;+ removeAircraft(aircraftId : int) : bool&#xa;+ createReservation(passengerId : int, flightId : int, seatNumber : string) : bool&#xa;+ cancelReservation(reservationId : int) : bool&#xa;+ checkInPassenger(reservationId : int) : bool&#xa;+ generateReports() : void" vertex="1">
+          <mxGeometry height="430" width="460" x="550" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="Flight" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="Flight&#xa;-------------------------&#xa;- flightId : int&#xa;- flightNumber : string&#xa;- origin : string&#xa;- destination : string&#xa;- departureTime : string&#xa;- arrivalTime : string&#xa;- aircraftId : int&#xa;- status : string&#xa;- price : double&#xa;-------------------------&#xa;+ setStatus(status : string) : void&#xa;+ reserveSeat(seatNumber : string) : bool&#xa;+ releaseSeat(seatNumber : string) : bool&#xa;+ displaySeatMap() : void&#xa;+ displayInfo() : void" vertex="1">
+          <mxGeometry height="310" width="330" x="60" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="Aircraft" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="Aircraft&#xa;-------------------------&#xa;- aircraftId : int&#xa;- model : string&#xa;- manufacturer : string&#xa;- capacity : int&#xa;- status : string&#xa;-------------------------&#xa;+ isAvailable() : bool&#xa;+ markAvailable() : void&#xa;+ markInFlight() : void&#xa;+ markUnderMaintenance() : void&#xa;+ displayInfo() : void" vertex="1">
+          <mxGeometry height="240" width="300" x="70" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="Reservation" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="Reservation&#xa;-------------------------&#xa;- reservationId : int&#xa;- passengerId : int&#xa;- flightId : int&#xa;- seatNumber : string&#xa;- seatClass : string&#xa;- status : string&#xa;- paymentId : int&#xa;- bookingDate : string&#xa;-------------------------&#xa;+ confirm() : void&#xa;+ cancel() : void&#xa;+ markCheckedIn() : void&#xa;+ isConfirmed() : bool&#xa;+ displayInfo() : void" vertex="1">
+          <mxGeometry height="300" width="330" x="1130" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="Payment" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="Payment&#xa;-------------------------&#xa;- paymentId : int&#xa;- reservationId : int&#xa;- amount : double&#xa;- paymentMethod : string&#xa;- status : string&#xa;- transactionDate : string&#xa;-------------------------&#xa;+ processPayment() : bool&#xa;+ processRefund() : bool&#xa;+ isCompleted() : bool&#xa;+ isRefunded() : bool&#xa;+ displayInfo() : void" vertex="1">
+          <mxGeometry height="260" width="300" x="1140" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="Maintenance" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;whiteSpace=wrap;html=1;fillColor=#ffffff;fontColor=#000000;strokeColor=#000000;" value="Maintenance&#xa;-------------------------&#xa;- maintenanceId : int&#xa;- aircraftId : int&#xa;- scheduledDate : string&#xa;- completedDate : string&#xa;- description : string&#xa;- status : string&#xa;-------------------------&#xa;+ completeMaintenance(completedDate : string) : void&#xa;+ cancelMaintenance() : void&#xa;+ isCompleted() : bool&#xa;+ displayInfo() : void" vertex="1">
+          <mxGeometry height="260" width="360" x="600" y="1420" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeAdminUser" edge="1" parent="1" source="Administrator" style="endArrow=block;endFill=0;html=1;strokeColor=#000000;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeAgentUser" edge="1" parent="1" source="BookingAgent" style="endArrow=block;endFill=0;html=1;strokeColor=#000000;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgePassengerUser" edge="1" parent="1" source="Passenger" style="endArrow=block;endFill=0;html=1;strokeColor=#000000;" target="User" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeAdminSystem" edge="1" parent="1" source="Administrator" style="endArrow=open;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="BookingSystem" value="manages through">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeAgentSystem" edge="1" parent="1" source="BookingAgent" style="endArrow=open;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="BookingSystem" value="uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgePassengerSystem" edge="1" parent="1" source="Passenger" style="endArrow=open;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="BookingSystem" value="uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeSystemFlight" edge="1" parent="1" source="BookingSystem" style="endArrow=diamondThin;endFill=0;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Flight" value="manages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeSystemAircraft" edge="1" parent="1" source="BookingSystem" style="endArrow=diamondThin;endFill=0;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Aircraft" value="manages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeSystemReservation" edge="1" parent="1" source="BookingSystem" style="endArrow=diamondThin;endFill=0;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Reservation" value="manages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeSystemPayment" edge="1" parent="1" source="BookingSystem" style="endArrow=diamondThin;endFill=0;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Payment" value="manages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeSystemMaintenance" edge="1" parent="1" source="BookingSystem" style="endArrow=diamondThin;endFill=0;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Maintenance" value="manages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeFlightAircraft" edge="1" parent="1" source="Flight" style="endArrow=open;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Aircraft" value="uses aircraft">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeReservationFlight" edge="1" parent="1" source="Reservation" style="endArrow=open;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Flight" value="for flight">
+          <mxGeometry relative="1" x="-0.267" y="-1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+            <Array as="points">
+              <mxPoint x="830" y="1360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edgeReservationPayment" edge="1" parent="1" source="Reservation" style="endArrow=open;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Payment" value="has payment">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edgeMaintenanceAircraft" edge="1" parent="1" source="Maintenance" style="endArrow=open;html=1;strokeColor=#000000;fontColor=#ffffff;labelBackgroundColor=#000000;" target="Aircraft" value="for aircraft">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

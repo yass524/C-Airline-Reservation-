@@ -3,6 +3,32 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <algorithm>
+
+
+Flight::Flight()
+    : flightId(0),
+      aircraftId(0),
+      status("Scheduled"),
+      price(0.0) {}
+
+Flight::Flight(int flightId,
+               const std::string& flightNumber,
+               const std::string& origin,
+               const std::string& destination,
+               const std::string& departureTime,
+               const std::string& arrivalTime,
+               int aircraftId,
+               double price)
+    : flightId(flightId),
+      flightNumber(flightNumber),
+      origin(origin),
+      destination(destination),
+      departureTime(departureTime),
+      arrivalTime(arrivalTime),
+      aircraftId(aircraftId),
+      status("Scheduled"),
+      price(price) {}
 
 int Flight::getFlightId() const {
     return flightId;

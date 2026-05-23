@@ -3,6 +3,34 @@
 #include <string>
 #include <vector>
 
+
+Aircraft::Aircraft()
+    : aircraftId(0),
+      capacity(0),
+      economySeats(0),
+      businessSeats(0),
+      firstClassSeats(0),
+      maxRangeKm(0.0),
+      status("Available") {}
+
+Aircraft::Aircraft(int aircraftId,
+                   const std::string& model,
+                   const std::string& manufacturer,
+                   int capacity,
+                   int economySeats,
+                   int businessSeats,
+                   int firstClassSeats,
+                   double maxRangeKm)
+    : aircraftId(aircraftId),
+      model(model),
+      manufacturer(manufacturer),
+      capacity(capacity),
+      economySeats(economySeats),
+      businessSeats(businessSeats),
+      firstClassSeats(firstClassSeats),
+      maxRangeKm(maxRangeKm),
+      status("Available") {}
+
 int Aircraft::getAircraftId() const {
     return aircraftId;
 }

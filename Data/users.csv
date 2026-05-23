@@ -1,0 +1,4 @@
+userId,name,email,password,phoneNumber,role
+1,Smoke User,smoke@example.com,1608338413649204969,0100,Administrator
+2,Yassin,yassin@gmail.com,8136505773947941319,0123445678,Administrator
+3,ahmed,ahmed@gmail.com,11844464045149276331,012345322134,Passenger
